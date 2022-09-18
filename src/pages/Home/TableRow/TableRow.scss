@@ -1,0 +1,61 @@
+@import '../../../styles/variables/variables.scss';
+@import '../../../styles/mixins/mixins.scss';
+
+.row {
+    display: grid;
+    grid-template-columns: 200px 100px 1fr 160px;
+
+    &:first-child {
+        .row__cell {
+            border-top: 1px solid $colorBlack;
+        }
+    }
+
+    &__cell {
+        padding: 10px 5px;
+        border-right: 1px solid $colorBlack;
+        border-bottom: 1px solid $colorBlack;
+
+        &:first-child {
+            border-left: 1px solid $colorBlack;
+        }
+
+        > input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1rem;
+            line-height: 1;
+            font-weight: 400;
+            border: 1px solid $colorBlack;
+
+            &:read-only {
+                border-color: transparent;
+                cursor: auto;
+            }
+        }
+
+        > input.error {
+            border-color: $colorRed;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    &__edit {
+        @include btn-primary;
+    }
+
+    &__edit.editing {
+        @include btn-thirdary;
+    }
+
+    &__delete {
+        @include btn-secondary;
+    }
+}

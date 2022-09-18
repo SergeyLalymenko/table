@@ -1,0 +1,61 @@
+@import '../../styles/variables/variables.scss';
+@import '../../styles/mixins/mixins.scss';
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba($colorBlack, .2);
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 700px;
+        padding: 40px;
+        border-radius: 20px;
+        background: $colorWhite;
+        transform: translate(-50%, -50%);
+
+        .form {
+            display: flex;
+            flex-direction: column;
+
+            > input {
+                margin-top: 10px;
+                width: 100%;
+                padding: 10px;
+                border-radius: 5px;
+                font-size: 1rem;
+                line-height: 1;
+                font-weight: 400;
+                border: 1px solid $colorBlack;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+
+            > input.error {
+                border-color: $colorRed;
+            }
+
+            &__buttons {
+                display: flex;
+                margin-top: 10px;
+            }
+
+            &__save {
+                @include btn-primary;
+            }
+
+            &__cancel {
+                margin-left: 10px;
+
+                @include btn-secondary;
+            }
+        }
+    }
+}

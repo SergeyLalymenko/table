@@ -1,0 +1,15 @@
+@import '../../styles/variables/variables.scss';
+@import '../../styles/mixins/mixins.scss';
+
+.home {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    .table {
+        &__add {
+            @include btn-primary;
+
+            margin-bottom: 20px;
+        }
+    }
+}
